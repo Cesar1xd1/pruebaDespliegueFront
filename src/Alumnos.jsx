@@ -49,7 +49,7 @@ const eliminarAlumno = (id) => {
     confirmButtonText: 'Sí, eliminar'
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:3001/alumnos/${id}`, {
+      fetch(`https://pruebadespliegueback.onrender.com/alumnos/${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())
@@ -70,7 +70,7 @@ const eliminarAlumno = (id) => {
 
 {/* Cargar/actualizar registro */}
   const fetchAlumnos = () => {
-    fetch('http://localhost:3001/alumnos')
+    fetch('https://pruebadespliegueback.onrender.com/alumnos')
       .then(res => res.json())
       .then(data => {
         setAlumnos(data);
@@ -97,7 +97,7 @@ const enviarDatos = () => {
     numTel: '1234567890'
   };
 
-  fetch('http://localhost:3001/alumnos', {
+  fetch('https://pruebadespliegueback.onrender.com/alumnos', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
